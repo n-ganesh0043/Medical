@@ -1,0 +1,75 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/reg.css' %}">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+ <h1 style="font-family: Algerian;text-align: center;font-size: 50px;color: deeppink">HEALTHCARE INFORMATION SYSTEM</h1>
+  <marquee><font style="font-size: 30px;color: red;font-family: Algerian"> CARONA virus is spreading without CARUNAAA!!!!! BE SAFE AT HOME ...</font></marquee>
+  <br>
+  <h3 style="font-family: 'Arial Black';font-size: 30px;color: green;text-align: center">E-HEALTHCARE ADVISOR</h3>
+  <br>
+{% include 'main_menu.html' %}
+ <br>
+<form method="post">
+    {% csrf_token %}
+ <table align="center" border="0">
+     <tr>
+         <th colspan="2" style="text-align: center;font-family: Algerian;color: red;font-size: 30px">USER REGISTRATION</th>
+     </tr>
+     <tr>
+         <th style="font-family: 'Arial Black'">FIRST NAME</th>
+         <th><input type="text" placeholder="first name" required name="a1"></th>
+     </tr>
+      <tr>
+         <th style="font-family: 'Arial Black'">LAST NAME</th>
+         <th><input type="text" placeholder="last name" required name="a2"></th>
+     </tr>
+      <tr>
+         <th style="font-family: 'Arial Black'">AGE</th>
+         <th><input type="number" placeholder="age" required name="a3" min="1"></th>
+     </tr>
+     <tr>
+         <th style="font-family: 'Arial Black'">GENDER</th>
+         <th><input type="radio" name="a4" checked value="male">MALE
+         <input type="radio" value="female" name="a4">FEMALE
+         </th>
+     </tr>
+     <tr>
+         <th style="font-family: 'Arial Black'">ADDRESS</th>
+         <th><textarea name="a5" required></textarea> </th>
+     </tr>
+     <tr>
+         <th>USERNAME</th>
+         <th><input type="text" required name="a6" placeholder="username"></th>
+     </tr>
+     <tr>
+         <th>PASSWORD</th>
+         <th><input type="password" name="a7" placeholder="*************" required></th>
+     </tr>
+     <tr>
+         <th style="text-align: center" colspan="2"><br><button type="submit" class="btn btn-success">SUBMIT</button> </th>
+     </tr>
+     {% for x in messages %}
+         <tr>
+         <th colspan="2" style="font-family: 'Arial Black';color: orange;font-size: 20px">{{ x }}</th>
+         </tr>
+     {% endfor %}
+ </table>
+    </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
